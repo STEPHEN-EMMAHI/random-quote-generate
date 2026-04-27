@@ -1,3 +1,22 @@
+/* GENERAL STYLING */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+/* NAV STYLING */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 123, 255);
+  padding: 1em;
+}
+
+.nav__loveguide-name {
+  color: #fffdfd;
+  letter-spacing: 0.1em;
+}
+
 /* MAIN STYLING */
 .main__heading {
   font-weight: 700;
