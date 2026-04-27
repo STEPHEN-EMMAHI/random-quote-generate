@@ -12,7 +12,7 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <title>LoveGuide</title>
-    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
     <link
       rel="stylesheet"
       href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css"
@@ -23,5 +23,38 @@
       type="image/png"
     />
   </head>
-  <body></body>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="nav">
+        <h2 class="nav__logo-name">LoveGuide</h2>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <section class="main__section-head">
+        <h1 class="main__heading">Your Guide to finding a good partner</h1>
+      </section>
+
+      <section class="main__section-quotes">
+        <button class="main__btn-generate-quote">Generate quote</button>
+        <div class="main__div-quote-display">
+          <p id="quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos
+            voluptatum ullam recusandae, nulla repudiandae, quia, quae
+            dignissimos consequuntur unde at harum nisi? Ea, iure ullam
+            voluptatum quibusdam fuga excepturi.
+          </p>
+          <p id="author">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+            molestias dolor aperiam sunt a officiis sapiente ipsa. Inventore
+            distinctio culpa, est saepe illo, at laborum quas, ullam iusto
+            molestiae ex.
+          </p>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
 </html>

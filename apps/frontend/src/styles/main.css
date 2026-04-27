@@ -1,0 +1,28 @@
+/* MAIN STYLING */
+.main__heading {
+  font-weight: 700;
+  text-align: left;
+  font-size: 2.5rem;
+  padding: 1em 2em 2em 0.4em;
+}
+
+/* main quotes area */
+.main__section-quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.main__btn-generate-quote {
+  font-size: 1.5rem;
+  padding: 0.5em;
+  margin: 0 1em;
+}
+
+.main__div-quote-display {
+  border: 1px solid #000;
+  margin: 1em;
+  padding: 1em;
+  font-size: 1.5rem;
+}
