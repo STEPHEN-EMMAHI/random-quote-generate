@@ -26,7 +26,7 @@ body {
 }
 
 /* main quotes area */
-.main__section-quotes {
+.main__div-quotes {
   display: flex;
   flex-direction: column;
   align-items: center;
