@@ -20,9 +20,9 @@ body {
 /* MAIN STYLING */
 .main__heading {
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   font-size: 2.5rem;
-  padding: 1em 2em 2em 0.4em;
+  padding: 1em;
 }
 
 /* main quotes area */
