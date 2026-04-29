@@ -1,6 +1,8 @@
+/* GENERATE QUOTE FEATURE */
+import { QUOTES } from "../data/quotes.js";
 import { STATE } from "../state/state.js";
 
-const BTN_QUOTE = document.getElementById("btn-quote");
+const BTN_FAV = document.getElementById("btn-fav");
 const TEXT = document.getElementById("quote");
 const AUTHOR = document.getElementById("author");
 
@@ -18,4 +20,20 @@ export function getRandomQuote() {
 export function renderQuote() {
   TEXT.textContent = `"${STATE.currentQuote.text}"`;
   AUTHOR.textContent = `author: ${STATE.currentQuote.author}`;
+}
+
+/* ADD TO FAV QUOTE FEATURE */
+export function saveCurrentQuote() {
+  const CURRENTQUOTE = STATE.currentQuote;
+
+  if (!CURRENTQUOTE) return;
+
+  const EXISTS = STATE.favorite.some((quote) => quote.id === CURRENTQUOTE.id);
+
+  if (!EXISTS) {
+    STATE.favorite.push(CURRENTQUOTE);
+    console.log("Added:", CURRENTQUOTE);
+  } else {
+    console.log("ALready exists");
+  }
 }

@@ -66,13 +66,25 @@ body {
 
 .main__div-btn {
   display: flex;
-  gap: 1.5em;
+  gap: 1em;
+  margin: 0 1em;
 }
 
 .btn-fav,
 .main__btn-generate-quote {
   font-size: 1.5rem;
   padding: 0.5em;
+}
+
+.btn-fav {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.svg-fav {
+  width: 24px;
+  height: 24px;
 }
 
 .main__div-quote-display {
