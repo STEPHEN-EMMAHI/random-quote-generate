@@ -64,10 +64,15 @@ body {
   gap: 2em;
 }
 
+.main__div-btn {
+  display: flex;
+  gap: 1.5em;
+}
+
+.btn-fav,
 .main__btn-generate-quote {
   font-size: 1.5rem;
   padding: 0.5em;
-  margin: 0 1em;
 }
 
 .main__div-quote-display {
