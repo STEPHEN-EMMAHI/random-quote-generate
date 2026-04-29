@@ -1,2 +1,116 @@
-@import "./reset.css";
-@import "./features.css";
+/* CSS RESET */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin-left: 1em;
+}
+
+/* GENERAL STYLING */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+/* HEADER STYLING */
+.header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* NAV STYLING */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 1em;
+}
+
+.nav__logo-name {
+  color: #000;
+  letter-spacing: 0.1em;
+}
+
+/* MAIN STYLING */
+.main__heading {
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 1em;
+}
+
+/* main quotes area */
+.main__div-quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.main__btn-generate-quote {
+  font-size: 1.5rem;
+  padding: 0.5em;
+  margin: 0 1em;
+}
+
+.main__div-quote-display {
+  border: 1px solid #000;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 1em;
+  font-size: 1.5rem;
+}
+
+.quote {
+  margin-bottom: 0.5em;
+}
+
+@media screen and (min-width: 48em) {
+  /* GENERAL STYLING */
+  html,
+  body {
+    height: 100%;
+  }
+
+  .div-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+  }
+
+  /* HEADER STYLING */
+  .header {
+    width: 25%;
+  }
+
+  .nav {
+    height: 100%;
+  }
+
+  /* MAIN STYLING */
+  .main {
+    width: 75%;
+  }
+
+  .main__heading {
+    font-size: 3rem;
+    text-align: left;
+  }
+}
