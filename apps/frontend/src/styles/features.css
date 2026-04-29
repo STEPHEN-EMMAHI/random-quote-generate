@@ -4,16 +4,26 @@ body {
   font-size: 1rem;
 }
 
+/* HEADER STYLING */
+.header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 /* NAV STYLING */
 .nav {
   display: flex;
   justify-content: center;
-  background-color: rgb(0, 123, 255);
+  background-color: #fff;
   padding: 1em;
 }
 
 .nav__logo-name {
-  color: #fffdfd;
+  color: #000;
   letter-spacing: 0.1em;
 }
 
