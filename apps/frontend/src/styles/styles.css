@@ -102,6 +102,11 @@ body {
 
   .nav {
     height: 100%;
+    background-color: rgb(12, 129, 175);
+  }
+
+  .nav__logo-name {
+    color: #fff;
   }
 
   /* MAIN STYLING */
