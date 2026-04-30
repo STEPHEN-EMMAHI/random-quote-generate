@@ -16,4 +16,4 @@ BTN_QUOTE.addEventListener("click", getRandomQuote);
 
 //get btn-fav
 const BTN_FAV = document.getElementById("btn-fav");
-BTN_FAV.addEventListener("click", saveCurrentQuotet);
+BTN_FAV.addEventListener("click", saveCurrentQuote);
