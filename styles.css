@@ -93,6 +93,10 @@ body {
   margin: 1em;
   padding: 1em;
   font-size: 1.5rem;
+  width: 75%;
+  max-width: 800px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .quote {
@@ -114,7 +118,7 @@ body {
 
   /* HEADER STYLING */
   .header {
-    width: 250px;
+    width: 25%;
   }
 
   .nav {
@@ -128,17 +132,11 @@ body {
 
   /* MAIN STYLING */
   .main {
-    width: 576px;
+    width: 75%;
   }
 
   .main__heading {
     font-size: 3rem;
     text-align: left;
-  }
-}
-
-@media screen and (min-width: 64em) {
-  .main {
-    width: 1024.5px;
   }
 }
