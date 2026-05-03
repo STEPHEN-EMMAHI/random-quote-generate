@@ -128,11 +128,17 @@ body {
 
   /* MAIN STYLING */
   .main {
-    width: 75%;
+    width: 576px;
   }
 
   .main__heading {
     font-size: 3rem;
     text-align: left;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .main {
+    width: 1024.5px;
   }
 }
