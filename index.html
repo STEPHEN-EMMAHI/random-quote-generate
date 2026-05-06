@@ -13,18 +13,14 @@
     />
     <title>LoveGuide</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link
-      rel="icon"
-      href="./assets/images/favicon-32x32.png"
-      type="image/png"
-    />
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/png" />
   </head>
   <body>
-    <div class="div-container">
+    <div class="overall-container">
       <!-- HEADER -->
-      <header class="header">
-        <nav class="nav">
-          <h2 class="nav__logo-name">LoveGuide</h2>
+      <header class="header-container">
+        <nav class="header__nav-container">
+          <h2 class="header__nav__logo-name">LoveGuide</h2>
         </nav>
       </header>
 
@@ -34,8 +30,10 @@
           <h1 class="main__heading">Your Guide to finding a good partner</h1>
         </section>
 
-        <div class="main__div-quotes">
-          <div class="main__div-btn">
+        <div class="main__quotes-container">
+          <!-- first-btns -->
+          <div class="main__first-btns-container">
+            <!-- add favorite quote -->
             <button aria-label="btn-fav" class="btn-fav" id="btn-fav">
               Add to Fav
               <svg
@@ -53,18 +51,29 @@
                 />
               </svg>
             </button>
+            <!-- generate quote -->
             <button
-              class="main__btn-generate-quote"
+              class="btn-generate-quote"
               id="btn-quote"
               aria-label="generate-quote"
             >
               Generate quote
             </button>
           </div>
+          <!-- second btns -->
+          <div class="main__second-btns-container">
+            <button class="btn-show-all" id="btn-show-all">
+              Show All Quotes
+            </button>
+          </div>
 
-          <div class="main__div-quote-display">
+          <!-- quotes-display -->
+          <div class="main__quote-display-container">
             <p id="quote" class="quote"></p>
             <p id="author"></p>
+          </div>
+          <div class="main__all-quotes-container">
+            <div id="all-quotes-container"></div>
           </div>
         </div>
       </main>

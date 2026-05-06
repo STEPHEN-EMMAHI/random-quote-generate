@@ -25,25 +25,15 @@ body {
   font-size: 1rem;
 }
 
-/* HEADER STYLING */
-.header {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
 /* NAV STYLING */
-.nav {
+.header__nav-container {
   display: flex;
   justify-content: center;
   background-color: #fff;
   padding: 1em;
 }
 
-.nav__logo-name {
+.header__nav__logo-name {
   color: #000;
   letter-spacing: 0.1em;
 }
@@ -57,23 +47,26 @@ body {
 }
 
 /* main quotes area */
-.main__div-quotes {
+.main__quotes-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2em;
 }
 
-.main__div-btn {
+.main__first-btns-container {
   display: flex;
   gap: 1em;
   margin: 0 1em;
 }
 
+/* contains multiple styles */
 .btn-fav,
-.main__btn-generate-quote {
+.btn-generate-quote,
+.btn-show-all {
   font-size: 1.5rem;
   padding: 0.5em;
+  cursor: pointer;
 }
 
 .btn-fav {
@@ -87,7 +80,7 @@ body {
   height: 24px;
 }
 
-.main__div-quote-display {
+.main__quote-display-container {
   border: 1px solid #000;
   border-radius: 1em;
   margin: 1em;
@@ -103,30 +96,47 @@ body {
   margin-bottom: 0.5em;
 }
 
-@media screen and (min-width: 48em) {
-  /* GENERAL STYLING */
-  html,
-  body {
-    height: 100%;
-  }
+.main__first-btns-container {
+  display: flex;
+  gap: 1em;
+  margin: 0 1em;
+}
 
-  .div-container {
+/* from javascript all-quotes.js => showAllQuotes function */
+.quotes-card {
+  border: 1px solid #000;
+  border-radius: 1em;
+  margin: 0.8em auto;
+  padding: 1em;
+  font-size: 1.5rem;
+  width: 75%;
+  max-width: 800px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media screen and (min-width: 48em) {
+  .overall-container {
     display: flex;
-    min-height: 100vh;
     align-items: stretch;
   }
 
   /* HEADER STYLING */
-  .header {
-    width: 25%;
+  .header-container {
+    width: 35%;
   }
 
-  .nav {
+  .header__nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
+    width: 25%;
+    z-index: 1000;
     background-color: rgb(12, 129, 175);
   }
 
-  .nav__logo-name {
+  .header__nav__logo-name {
     color: #fff;
   }
 
@@ -137,6 +147,14 @@ body {
 
   .main__heading {
     font-size: 3rem;
-    text-align: left;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .btn-fav,
+  .btn-generate-quote,
+  .btn-show-all {
+    cursor: pointer;
   }
 }

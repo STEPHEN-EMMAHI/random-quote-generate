@@ -34,6 +34,6 @@ export function saveCurrentQuote() {
     STATE.favorite.push(CURRENTQUOTE);
     console.log("Added:", CURRENTQUOTE);
   } else {
-    console.log("ALready exists");
+    console.log("Already exists");
   }
 }
