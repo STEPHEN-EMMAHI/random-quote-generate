@@ -61,9 +61,22 @@
             </button>
           </div>
           <!-- second btns -->
+          <!-- show all quotes -->
           <div class="main__second-btns-container">
-            <button class="btn-show-all" id="btn-show-all">
-              Show All Quotes
+            <button
+              aria-label="show-all-quotes"
+              class="btn-show-all"
+              id="btn-show-all"
+            >
+              All Quotes
+            </button>
+            <!-- hide all quotes -->
+            <button
+              aria-label="hide-all-quotes"
+              class="hide-all-quotes"
+              id="hide-all-quotes"
+            >
+              Hide All Quotes
             </button>
           </div>
 
@@ -72,7 +85,9 @@
             <p id="quote" class="quote"></p>
             <p id="author"></p>
           </div>
-          <div class="main__all-quotes-container">
+          <!-- show all quotes display -->
+          <div>
+            <h2 class="main__show-quotes-name">Show All QUotes here</h2>
             <div id="all-quotes-container"></div>
           </div>
         </div>
