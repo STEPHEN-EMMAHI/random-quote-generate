@@ -54,16 +54,18 @@ body {
   gap: 2em;
 }
 
-.main__first-btns-container {
+.main__first-btns-container,
+.main__second-btns-container {
   display: flex;
   gap: 1em;
   margin: 0 1em;
 }
 
-/* contains multiple styles */
+/* contains multiple btn styles */
 .btn-fav,
 .btn-generate-quote,
-.btn-show-all {
+.btn-show-all,
+.hide-all-quotes {
   font-size: 1.5rem;
   padding: 0.5em;
   cursor: pointer;
@@ -100,6 +102,11 @@ body {
   display: flex;
   gap: 1em;
   margin: 0 1em;
+}
+
+.main__show-quotes-name {
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 /* from javascript all-quotes.js => showAllQuotes function */
