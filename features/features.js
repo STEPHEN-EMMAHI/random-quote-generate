@@ -1,15 +1,16 @@
-import { QUOTES } from "../data/quotes.js";
 import { STATE } from "../state/state.js";
 
-/* ==> GENERATE QUOTE FEATURE */
+/* ==> SELECTING ELEMENTS */
 
 const BTN_FAV = document.getElementById("btn-fav");
 const TEXT = document.getElementById("quote");
 const AUTHOR = document.getElementById("author");
 const DIV_DISPLAY_QUOTE = document.getElementById(
-  "main__quotes-diaplay-container",
+  "main__quotes-display-container",
 );
 const BTN_ALL_QUOTES = document.getElementById("all-quotes-container");
+
+/* ==> GET RANDOM QUOTE FUNCTION */
 
 /* function to get random quote */
 export function getRandomQuote() {
@@ -21,6 +22,8 @@ export function getRandomQuote() {
   renderQuote();
   hideAllQuotes();
 }
+
+/* RENDER QUOTE ON SCREEN */
 
 /* function to show quote on screen */
 export function renderQuote() {
@@ -71,4 +74,25 @@ export function showAllQuotes() {
 export function hideAllQuotes() {
   BTN_ALL_QUOTES.innerHTML = "";
   renderQuote();
+}
+
+/* ==> FILTER BY CATEGORY */
+export function filterByCategory(category) {
+  const FILTERED = STATE.allQuotes.filter(
+    (quote) => quote.category === category,
+  );
+
+  // when clicked remove the contents of the quote and ita container
+  TEXT.textContent = "";
+  AUTHOR.textContent = "";
+  DIV_DISPLAY_QUOTE.classList.remove("none");
+
+  // mapping html ELEMENTS
+  const DISPLAY_FILTERED = FILTERED.map((quotes) => {
+    return `<div class="filterd-quotes-container">
+    <p>"${quotes.text}"</p>
+    <p>author: ${quotes.author}</p>
+    </div>`;
+  }).join("");
+  BTN_ALL_QUOTES.innerHTML = DISPLAY_FILTERED;
 }
