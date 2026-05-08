@@ -114,7 +114,8 @@ body {
 }
 
 /* from javascript all-quotes.js => showAllQuotes function */
-.quotes-card {
+.quotes-card,
+.filterd-quotes-container {
   border: 1px solid #000;
   border-radius: 1em;
   margin: 0 auto 0.8em auto;

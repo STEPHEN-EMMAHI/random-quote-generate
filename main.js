@@ -5,6 +5,7 @@ import {
   saveCurrentQuote,
   showAllQuotes,
   hideAllQuotes,
+  filterByCategory,
 } from "./features/features.js";
 
 // ==> render the random quote
@@ -29,3 +30,11 @@ BTN_ALL_QUOTES.addEventListener("click", showAllQuotes);
 // get the hide all quotes id and click to hide quotes
 const BTN_HIDE_QUOTES = document.getElementById("hide-all-quotes");
 BTN_HIDE_QUOTES.addEventListener("click", hideAllQuotes);
+
+/* ==> FILTER CATEGORY */
+// get the select container's ID (Event Delegation)
+const SELECTION_CATEGORY = document.getElementById("category-select");
+SELECTION_CATEGORY.addEventListener("change", (event) => {
+  const SELECTED_CATEGORY = event.target.value;
+  filterByCategory(SELECTED_CATEGORY);
+});
