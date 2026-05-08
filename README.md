@@ -3,7 +3,7 @@
 # Project Title and Description
 
 A loveguide website that fetches and displays quotes about what to look for in a partner.
-The ultimate goal of this project is to practice asynchronous API fetching and state management. Currently using data(quotes) locally from an array of objects.
+The ultimate goal of this project is to practice asynchronous API fetching and be able to download a quote. Currently using data(quotes) locally from an array of objects.
 
 <!-- key features -->
 
@@ -40,8 +40,8 @@ git clone git@github.com:STEPHEN-EMMAHI/loveguide-random-quote-generator.git
 cd loveguide-random-quote-generator
 ```
 
-3. Open the project : 
-You can open index.html directly in your browser or use VS Code Live Server for better development experience.
+3. Open the project :
+   You can open index.html directly in your browser or use VS Code Live Server for better development experience.
 
 ## Requirements
 
