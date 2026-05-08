@@ -42,7 +42,7 @@ body {
 .main__heading {
   font-weight: 700;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 1em;
 }
 
@@ -66,7 +66,6 @@ body {
 .btn-generate-quote,
 .btn-show-all,
 .hide-all-quotes {
-  font-size: 1.5rem;
   padding: 0.5em;
   cursor: pointer;
 }
@@ -78,24 +77,34 @@ body {
 }
 
 .svg-fav {
-  width: 24px;
-  height: 24px;
+  width: 15px;
+  height: 15px;
 }
 
-.main__quote-display-container {
+.category {
+  margin-top: 1em;
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 8px;
+  cursor: pointer;
+  appearance: none;
+}
+
+.category:focus {
+  outline: none;
+  border-color: #070707;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.main__quote-display-container.none {
   border: 1px solid #000;
   border-radius: 1em;
   margin: 1em;
   padding: 1em;
-  font-size: 1.5rem;
   width: 75%;
   max-width: 800px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-}
-
-.quote {
-  margin-bottom: 0.5em;
 }
 
 .main__first-btns-container {
@@ -104,18 +113,12 @@ body {
   margin: 0 1em;
 }
 
-.main__show-quotes-name {
-  text-align: center;
-  margin-bottom: 1em;
-}
-
 /* from javascript all-quotes.js => showAllQuotes function */
 .quotes-card {
   border: 1px solid #000;
   border-radius: 1em;
-  margin: 0.8em auto;
+  margin: 0 auto 0.8em auto;
   padding: 1em;
-  font-size: 1.5rem;
   width: 75%;
   max-width: 800px;
   word-wrap: break-word;
