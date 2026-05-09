@@ -130,5 +130,5 @@ export function showToast() {
     setTimeout(() => {
       TOAST.remove();
     }, 3000);
-  }, 1000);
+  }, 4000);
 }
