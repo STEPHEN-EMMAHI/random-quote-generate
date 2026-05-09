@@ -6,6 +6,7 @@ import {
   showAllQuotes,
   hideAllQuotes,
   filterByCategory,
+  showToast,
 } from "./features/features.js";
 
 // ==> render the random quote
@@ -15,6 +16,10 @@ setTimeout(renderQuote, 1500);
 // get btn quote id and click btn-quote to generate random quote
 const BTN_QUOTE = document.getElementById("btn-quote");
 BTN_QUOTE.addEventListener("click", getRandomQuote);
+
+/* TOAST */
+const ADD_TO_FAVORITES = document.getElementById("btn-fav");
+ADD_TO_FAVORITES.addEventListener("click", showToast);
 
 /* ==> BTN FAV-QUOTE */
 //get btn-fav id and click to add to fav

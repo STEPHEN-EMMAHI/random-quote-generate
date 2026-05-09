@@ -25,6 +25,31 @@ body {
   font-size: 1rem;
 }
 
+.toast-container {
+  width: 90%;
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toast {
+  background-color: rgb(16, 84, 16);
+  color: #fff;
+  padding: 0.2em;
+  border-radius: 0.3em;
+  margin-bottom: 0.2em;
+  display: flex;
+  gap: 0.2em;
+  font-weight: bold;
+  transform: translateX(120%);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
 /* NAV STYLING */
 .header__nav-container {
   display: flex;
@@ -127,6 +152,16 @@ body {
 }
 
 @media screen and (min-width: 48em) {
+  .toast-container {
+    width: 50%;
+    top: 20px;
+    right: 20px;
+  }
+
+  .toast {
+    padding: 0.7em;
+  }
+
   .overall-container {
     display: flex;
     align-items: stretch;

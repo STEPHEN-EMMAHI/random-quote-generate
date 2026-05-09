@@ -9,6 +9,8 @@ const DIV_DISPLAY_QUOTE = document.getElementById(
   "main__quotes-display-container",
 );
 const BTN_ALL_QUOTES = document.getElementById("all-quotes-container");
+// toast container ID
+const TOAST_CONTAINER = document.getElementById("toast-container");
 
 /* ==> GET RANDOM QUOTE FUNCTION */
 
@@ -95,4 +97,38 @@ export function filterByCategory(category) {
     </div>`;
   }).join("");
   BTN_ALL_QUOTES.innerHTML = DISPLAY_FILTERED;
+}
+
+/* ==> SHOW TOAST FUNCTION */
+export function showToast() {
+  // check if quote has already been added to favorites
+  const IS_ALREADY_FAVORITE = STATE.favorite.some(
+    (item) => STATE.currentQuote === item,
+  );
+
+  if (IS_ALREADY_FAVORITE) {
+    return;
+  }
+
+  // create the show toast element
+  const TOAST = document.createElement("div");
+  // create a class for the toast element
+  TOAST.className = "toast";
+  // create an element inside the toast element
+  TOAST.innerHTML = "<span>Quote added successfully to favorites✅✅</span>";
+  // append the element created to the html element
+  TOAST_CONTAINER.appendChild(TOAST);
+
+  // small timeout to trigger CSS transition
+  setTimeout(() => {
+    TOAST.classList.add("show");
+  });
+
+  // slide out and remove after 3 seconds
+  setTimeout(() => {
+    TOAST.classList.remove("show");
+    setTimeout(() => {
+      TOAST.remove();
+    }, 3000);
+  }, 1000);
 }
