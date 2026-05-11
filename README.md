@@ -3,7 +3,7 @@
 # Project Title and Description
 
 A loveguide website that fetches and displays quotes about what to look for in a partner.
-The ultimate goal of this project is to practice asynchronous API fetching and be able to receive a notification of a random quote on your phone every morning by subscription. Currently using data(quotes) locally from an array of objects.
+The ultimate goal of this project is to practice asynchronous API fetching. Currently using data(quotes) locally from an array of objects.
 
 <!-- key features -->
 
