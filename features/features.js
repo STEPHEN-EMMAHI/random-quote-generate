@@ -29,7 +29,7 @@ export function getRandomQuote() {
 
 /* function to show quote on screen */
 export function renderQuote() {
-  DIV_DISPLAY_QUOTE.classList.add("none");
+  DIV_DISPLAY_QUOTE.classList.add("container");
   TEXT.textContent = `"${STATE.currentQuote.text}"`;
   AUTHOR.textContent = `author: ${STATE.currentQuote.author}`;
 }
@@ -69,7 +69,7 @@ export function showAllQuotes() {
   // hide random quote
   TEXT.textContent = "";
   AUTHOR.textContent = "";
-  DIV_DISPLAY_QUOTE.classList.remove("none");
+  DIV_DISPLAY_QUOTE.classList.remove("container");
 }
 
 /* ==> HIDE ALL QUOTES FEATURE */
@@ -84,10 +84,10 @@ export function filterByCategory(category) {
     (quote) => quote.category === category,
   );
 
-  // when clicked remove the contents of the quote and ita container
+  // when clicked remove the contents of the quote and its container
   TEXT.textContent = "";
   AUTHOR.textContent = "";
-  DIV_DISPLAY_QUOTE.classList.remove("none");
+  DIV_DISPLAY_QUOTE.classList.remove("container");
 
   // mapping html ELEMENTS
   const DISPLAY_FILTERED = FILTERED.map((quotes) => {
@@ -131,4 +131,26 @@ export function showToast() {
       TOAST.remove();
     }, 3000);
   }, 1000);
+}
+
+/* ==> FUNCTION TO SHOW ALL FAVORITE QUOTES */
+export function showAllFavQuotes() {
+  //check if favorite array is empty
+  if (STATE.favorite.length === 0) return;
+  // when clicked remove the contents of the quote and its container
+  TEXT.textContent = "";
+  AUTHOR.textContent = "";
+  DIV_DISPLAY_QUOTE.classList.remove("container");
+
+  // get favorite quote and map to html elements
+  const FAV_QUOTE = STATE.favorite
+    .map((favQuote) => {
+      return `<div class="filterd-quotes-container">
+    <p>"${favQuote.text}"</p>
+    <p>${favQuote.author}</p>
+    </div>`;
+    })
+    .join("");
+
+  BTN_ALL_QUOTES.innerHTML = FAV_QUOTE;
 }

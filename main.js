@@ -7,6 +7,7 @@ import {
   hideAllQuotes,
   filterByCategory,
   showToast,
+  showAllFavQuotes,
 } from "./features/features.js";
 
 // ==> render the random quote
@@ -17,24 +18,27 @@ setTimeout(renderQuote, 1500);
 const BTN_QUOTE = document.getElementById("btn-quote");
 BTN_QUOTE.addEventListener("click", getRandomQuote);
 
-/* TOAST */
-const ADD_TO_FAVORITES = document.getElementById("btn-fav");
-ADD_TO_FAVORITES.addEventListener("click", showToast);
-
-/* ==> BTN FAV-QUOTE */
+/* ==> BTN FAV-QUOTE & TOAST */
 //get btn-fav id and click to add to fav
 const BTN_FAV = document.getElementById("btn-fav");
-BTN_FAV.addEventListener("click", saveCurrentQuote);
+BTN_FAV.addEventListener("click", () => {
+  showToast();
+  saveCurrentQuote();
+});
 
 /* ==>  BTN SHOW ALL QUOTES */
 // get the btn-all-quote id and click to show all quotes
 const BTN_ALL_QUOTES = document.getElementById("btn-show-all");
-BTN_ALL_QUOTES.addEventListener("click", showAllQuotes);
+BTN_ALL_QUOTES.addEventListener("click", () => {
+  showAllQuotes();
+});
 
 /* ==> HIDE ALL QUOTES */
 // get the hide all quotes id and click to hide quotes
 const BTN_HIDE_QUOTES = document.getElementById("hide-all-quotes");
-BTN_HIDE_QUOTES.addEventListener("click", hideAllQuotes);
+BTN_HIDE_QUOTES.addEventListener("click", () => {
+  hideAllQuotes();
+});
 
 /* ==> FILTER CATEGORY */
 // get the select container's ID (Event Delegation)
@@ -43,3 +47,8 @@ SELECTION_CATEGORY.addEventListener("change", (event) => {
   const SELECTED_CATEGORY = event.target.value;
   filterByCategory(SELECTED_CATEGORY);
 });
+
+/* ==> SHOW ALL FAVORITE QUOTES */
+// get the show-all-fav ID
+const SHOW_ALL_QUOTES = document.getElementById("show-all-fav");
+SHOW_ALL_QUOTES.addEventListener("click", showAllFavQuotes);
