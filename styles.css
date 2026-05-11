@@ -80,7 +80,8 @@ body {
 }
 
 .main__first-btns-container,
-.main__second-btns-container {
+.main__second-btns-container,
+.main__third-btns-container {
   display: flex;
   gap: 1em;
   margin: 0 1em;
@@ -90,7 +91,8 @@ body {
 .btn-fav,
 .btn-generate-quote,
 .btn-show-all,
-.hide-all-quotes {
+.hide-all-quotes,
+.show-all-fav {
   padding: 0.5em;
   cursor: pointer;
 }
@@ -121,7 +123,7 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.main__quote-display-container.none {
+.main__quote-display-container.container {
   border: 1px solid #000;
   border-radius: 1em;
   margin: 1em;
