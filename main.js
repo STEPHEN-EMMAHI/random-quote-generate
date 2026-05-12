@@ -13,6 +13,7 @@ import {
 
 import { STATE } from "./state/state.js";
 
+// initialize a flag variable
 let flag = false;
 
 // ==> render the random quote
