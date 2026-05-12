@@ -22,7 +22,8 @@ export function getRandomQuote() {
   // update state
   STATE.currentQuote = STATE.allQuotes[RANDOM_INDEX];
   renderQuote();
-  hideAllQuotes();
+  BTN_ALL_QUOTES.innerHTML = "";
+  /*  hideAllQuotes(); */
 }
 
 /* RENDER QUOTE ON SCREEN */
@@ -37,8 +38,10 @@ export function renderQuote() {
 /* ==> ADD TO FAV QUOTE FEATURE */
 
 export function saveCurrentQuote() {
+  // get the current quote
   const CURRENTQUOTE = STATE.currentQuote;
 
+  // if it is not the current quote, return
   if (!CURRENTQUOTE) return;
 
   const EXISTS = STATE.favorite.some((quote) => quote.id === CURRENTQUOTE.id);
@@ -51,54 +54,6 @@ export function saveCurrentQuote() {
   }
 }
 
-/* ==> SHOW ALL QUOTES FEATURE */
-
-// show all quotes function
-export function showAllQuotes() {
-  // mapping to HTML
-  const ALL_QUOTES = STATE.allQuotes
-    .map((quotes) => {
-      return `<div class="quotes-card">
-    <p>"${quotes.text}"</p>
-    <p>author: ${quotes.author} </p>
-    </div>`;
-    })
-    .join("");
-
-  BTN_ALL_QUOTES.innerHTML = ALL_QUOTES;
-  // hide random quote
-  TEXT.textContent = "";
-  AUTHOR.textContent = "";
-  DIV_DISPLAY_QUOTE.classList.remove("container");
-}
-
-/* ==> HIDE ALL QUOTES FEATURE */
-export function hideAllQuotes() {
-  BTN_ALL_QUOTES.innerHTML = "";
-  renderQuote();
-}
-
-/* ==> FILTER BY CATEGORY */
-export function filterByCategory(category) {
-  const FILTERED = STATE.allQuotes.filter(
-    (quote) => quote.category === category,
-  );
-
-  // when clicked remove the contents of the quote and its container
-  TEXT.textContent = "";
-  AUTHOR.textContent = "";
-  DIV_DISPLAY_QUOTE.classList.remove("container");
-
-  // mapping html ELEMENTS
-  const DISPLAY_FILTERED = FILTERED.map((quotes) => {
-    return `<div class="filterd-quotes-container">
-    <p>"${quotes.text}"</p>
-    <p>author: ${quotes.author}</p>
-    </div>`;
-  }).join("");
-  BTN_ALL_QUOTES.innerHTML = DISPLAY_FILTERED;
-}
-
 /* ==> SHOW TOAST FUNCTION */
 export function showToast() {
   // check if quote has already been added to favorites
@@ -106,9 +61,11 @@ export function showToast() {
     (item) => STATE.currentQuote === item,
   );
 
-  if (IS_ALREADY_FAVORITE) {
-    return;
-  }
+  // if it's not STATE.current quote don't trigger a toast
+  /* if (!STATE.currentQuote) return; */
+
+  // if quote is already in fav array, don't trigger a toast
+  if (IS_ALREADY_FAVORITE) return;
 
   // create the show toast element
   const TOAST = document.createElement("div");
@@ -133,10 +90,51 @@ export function showToast() {
   }, 4000);
 }
 
+/* ==> SHOW ALL QUOTES FEATURE */
+
+// show all quotes function
+export function showAllQuotes() {
+  // hide random quote
+  TEXT.textContent = "";
+  AUTHOR.textContent = "";
+  DIV_DISPLAY_QUOTE.classList.remove("container");
+
+  // mapping to HTML
+  const ALL_QUOTES = STATE.allQuotes
+    .map((quotes) => {
+      return `<div class="quotes-card">
+    <p>"${quotes.text}"</p>
+    <p>author: ${quotes.author} </p>
+    </div>`;
+    })
+    .join("");
+
+  BTN_ALL_QUOTES.innerHTML = ALL_QUOTES;
+}
+
+/* ==> FILTER BY CATEGORY */
+export function filterByCategory(category) {
+  const FILTERED = STATE.allQuotes.filter(
+    (quote) => quote.category === category,
+  );
+
+  // when clicked remove the contents of the quote and its container
+  TEXT.textContent = "";
+  AUTHOR.textContent = "";
+  DIV_DISPLAY_QUOTE.classList.remove("container");
+
+  // mapping html ELEMENTS
+  const DISPLAY_FILTERED = FILTERED.map((quotes) => {
+    return `<div class="filterd-quotes-container">
+    <p>"${quotes.text}"</p>
+    <p>author: ${quotes.author}</p>
+    </div>`;
+  }).join("");
+  BTN_ALL_QUOTES.innerHTML = DISPLAY_FILTERED;
+}
+
 /* ==> FUNCTION TO SHOW ALL FAVORITE QUOTES */
 export function showAllFavQuotes() {
-  //check if favorite array is empty
-  if (STATE.favorite.length === 0) return;
   // when clicked remove the contents of the quote and its container
   TEXT.textContent = "";
   AUTHOR.textContent = "";
@@ -145,7 +143,7 @@ export function showAllFavQuotes() {
   // get favorite quote and map to html elements
   const FAV_QUOTE = STATE.favorite
     .map((favQuote) => {
-      return `<div class="filterd-quotes-container">
+      return `<div class="show-quotes-container">
     <p>"${favQuote.text}"</p>
     <p>${favQuote.author}</p>
     </div>`;
@@ -153,4 +151,24 @@ export function showAllFavQuotes() {
     .join("");
 
   BTN_ALL_QUOTES.innerHTML = FAV_QUOTE;
+}
+
+/* ==> CLEAR ALL FAVORITES FUNCTION */
+export function clearAllQuotes() {
+// when clicked assign allquotes to an empty string
+  BTN_ALL_QUOTES.innerHTML = "";
+
+  // also empty the array upon clearing everything
+  STATE.favorite = [];
+
+  setTimeout(renderQuote, 1500);
+}
+
+export function clearAllFavorites() {
+  // empty the array and print it out
+  STATE.favorite = [];
+  console.log(STATE.favorite.length);
+  BTN_ALL_QUOTES.innerHTML = "";
+
+  setTimeout(renderQuote, 1500);
 }
