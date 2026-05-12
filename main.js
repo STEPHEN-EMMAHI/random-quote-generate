@@ -13,8 +13,10 @@ import {
 
 import { STATE } from "./state/state.js";
 
+let flag = false;
+
 // ==> render the random quote
-setTimeout(renderQuote, 1000);
+setTimeout(renderQuote, 800);
 
 /* ==> BTN GENERATE QUOTE */
 // get btn quote id and click btn-quote to generate random quote
@@ -27,6 +29,7 @@ BTN_QUOTE.addEventListener("click", () => {
 //get btn-fav id and click to add to fav
 const BTN_FAV = document.getElementById("btn-fav");
 BTN_FAV.addEventListener("click", () => {
+  if (flag) return;
   showToast();
   saveCurrentQuote();
 });
@@ -41,6 +44,7 @@ BTN_ALL_QUOTES.addEventListener("click", showAllQuotes);
 const SELECTION_CATEGORY = document.getElementById("category-select");
 SELECTION_CATEGORY.addEventListener("change", (event) => {
   const SELECTED_CATEGORY = event.target.value;
+  flag = true;
   filterByCategory(SELECTED_CATEGORY);
 });
 
