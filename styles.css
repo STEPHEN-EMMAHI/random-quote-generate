@@ -91,8 +91,9 @@ body {
 .btn-fav,
 .btn-generate-quote,
 .btn-show-all,
-.hide-all-quotes,
-.show-all-fav {
+.show-all-fav,
+.clear-all,
+.clear-all-fav {
   padding: 0.5em;
   cursor: pointer;
 }
@@ -143,6 +144,17 @@ body {
 /* from javascript all-quotes.js => showAllQuotes function */
 .quotes-card,
 .filterd-quotes-container {
+  border: 1px solid #000;
+  border-radius: 1em;
+  margin: 0 auto 0.8em auto;
+  padding: 1em;
+  width: 75%;
+  max-width: 800px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.show-quotes-container {
   border: 1px solid #000;
   border-radius: 1em;
   margin: 0 auto 0.8em auto;
