@@ -155,13 +155,13 @@ export function showAllFavQuotes() {
 
 /* ==> CLEAR ALL FAVORITES FUNCTION */
 export function clearAllQuotes() {
-// when clicked assign allquotes to an empty string
+  // when clicked assign allquotes to an empty string
   BTN_ALL_QUOTES.innerHTML = "";
 
   // also empty the array upon clearing everything
   STATE.favorite = [];
 
-  setTimeout(renderQuote, 1500);
+  setTimeout(renderQuote, 400);
 }
 
 export function clearAllFavorites() {
@@ -170,5 +170,5 @@ export function clearAllFavorites() {
   console.log(STATE.favorite.length);
   BTN_ALL_QUOTES.innerHTML = "";
 
-  setTimeout(renderQuote, 1500);
+  setTimeout(renderQuote, 400);
 }
