@@ -14,7 +14,7 @@ import {
 import { STATE } from "./state/state.js";
 
 // ==> render the random quote
-setTimeout(renderQuote, 500);
+setTimeout(renderQuote, 400);
 
 // initialize a new flag
 let flag = false;

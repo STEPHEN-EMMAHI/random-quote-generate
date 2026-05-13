@@ -150,6 +150,10 @@ export function showAllFavQuotes() {
     .join("");
 
   BTN_ALL_QUOTES.innerHTML = FAV_QUOTE;
+
+  if (STATE.favorite.length === 0) {
+    setTimeout(renderQuote, 300);
+  }
 }
 
 /* ==> CLEAR ALL FAVORITES FUNCTION */
@@ -160,7 +164,7 @@ export function clearAllQuotes() {
   // also empty the array upon clearing everything
   STATE.favorite = [];
 
-  setTimeout(renderQuote, 500);
+  setTimeout(renderQuote, 400);
 }
 
 export function clearAllFavorites() {
@@ -169,5 +173,5 @@ export function clearAllFavorites() {
   console.log(STATE.favorite.length);
   BTN_ALL_QUOTES.innerHTML = "";
 
-  setTimeout(renderQuote, 500);
+  setTimeout(renderQuote, 400);
 }
