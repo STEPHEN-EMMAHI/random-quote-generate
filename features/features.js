@@ -71,7 +71,8 @@ export function showToast() {
   // create a class for the toast element
   TOAST.className = "toast";
   // create an element inside the toast element
-  TOAST.innerHTML = "<span>Added successfully to favorites✅</span>";
+  TOAST.innerHTML =
+    "<span class='toast-span'>Added successfully to favorites✅</span>";
   // append the element created to the html element
   TOAST_CONTAINER.appendChild(TOAST);
 
@@ -85,8 +86,8 @@ export function showToast() {
     TOAST.classList.remove("show");
     setTimeout(() => {
       TOAST.remove();
-    }, 3000);
-  }, 4000);
+    }, 100);
+  }, 2000);
 }
 
 /* ==> SHOW ALL QUOTES FEATURE */

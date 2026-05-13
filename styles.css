@@ -29,10 +29,10 @@ body {
 /* OTHER STYLINGS */
 
 .toast-container {
-  width: 90%;
+  width: 65%;
   position: fixed;
   top: 70px;
-  right: 0;
+  right: 70px;
   z-index: 1000;
 }
 
@@ -45,7 +45,7 @@ body {
   display: flex;
   gap: 0.2em;
   font-weight: bold;
-  transform: translateY(-120%);
+  transform: translateY(-130%);
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -196,8 +196,8 @@ body {
 @media screen and (min-width: 48em) {
   .toast-container {
     width: 50%;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 100px;
   }
 
   .toast {
