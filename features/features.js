@@ -23,7 +23,6 @@ export function getRandomQuote() {
   STATE.currentQuote = STATE.allQuotes[RANDOM_INDEX];
   renderQuote();
   BTN_ALL_QUOTES.innerHTML = "";
-  /*  hideAllQuotes(); */
 }
 
 /* RENDER QUOTE ON SCREEN */
@@ -161,7 +160,7 @@ export function clearAllQuotes() {
   // also empty the array upon clearing everything
   STATE.favorite = [];
 
-  setTimeout(renderQuote, 400);
+  setTimeout(renderQuote, 500);
 }
 
 export function clearAllFavorites() {
@@ -170,5 +169,5 @@ export function clearAllFavorites() {
   console.log(STATE.favorite.length);
   BTN_ALL_QUOTES.innerHTML = "";
 
-  setTimeout(renderQuote, 400);
+  setTimeout(renderQuote, 500);
 }
