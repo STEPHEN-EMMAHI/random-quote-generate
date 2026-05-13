@@ -71,7 +71,7 @@ export function showToast() {
   // create a class for the toast element
   TOAST.className = "toast";
   // create an element inside the toast element
-  TOAST.innerHTML = "<span>Quote added successfully to favorites✅✅</span>";
+  TOAST.innerHTML = "<span>Added successfully to favorites✅</span>";
   // append the element created to the html element
   TOAST_CONTAINER.appendChild(TOAST);
 
@@ -124,7 +124,7 @@ export function filterByCategory(category) {
 
   // mapping html ELEMENTS
   const DISPLAY_FILTERED = FILTERED.map((quotes) => {
-    return `<div class="filterd-quotes-container">
+    return `<div class="filtered-quotes-container">
     <p>"${quotes.text}"</p>
     <p>author: ${quotes.author}</p>
     </div>`;
